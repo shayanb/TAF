@@ -39,15 +39,12 @@ def compare(norm,malware, window):
     OUTPUT = normfilename + "_" + malwarefilename + "_flagged.csv"
     MalicousSeqfilename = normfilename + "_" + malwarefilename + "_anamoly.csv"
     MalicousSeq = open(MalicousSeqfilename, "w")
-    #OUTPUT = malwarefilename + "flagged.csv"
     seq = open(OUTPUT , "w")
-  #  anomaly = open(OUTPUT)
     Header = 'S1' #header for the csv file
     for i in xrange(1,window):
         Header = Header + ",S" + str(i+1)
     Header = Header + ",flag\n"
     seq.write(Header)
-    #seq = open(OUTPUT, "a")
     with open(malware) as malfile:
         for line in malfile:
             if line in open(norm).read():
@@ -62,11 +59,8 @@ def compare(norm,malware, window):
                 seq.write(line.rstrip('\n'))
                 seq.write("1")
                 seq.write("\n")
-                #print "NO"
     MalicousSeq.close()
     seq.close()
-
-#compare(norm,malware)
 
 
 if len(sys.argv) > 3:
