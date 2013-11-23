@@ -2,7 +2,6 @@ TAF
 ===
 
 Trace Analysis Framework (Version 0.2)
-(Strace)
 
 * Parser and tools to extract system call sequences from strace trace of an application.
 
@@ -14,6 +13,7 @@ Trace Analysis Framework (Version 0.2)
 
 * outputs flagged system call sequence windows and converts the anomalies to system call name sequences
 
+(Support for default switches with following the forks: strace -o trace.txt -C -f file)
 
 ![TAF](/docs/TAF.png)
 
